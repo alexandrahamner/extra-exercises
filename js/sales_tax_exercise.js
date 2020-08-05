@@ -10,16 +10,19 @@
 
 var shoppingBasketOne = [
     { item: "book",
-      cost: 12.49,
-      salesTax: 0,
+        cost: 12.49,
+        salesTax: 0,
+        importTax: 0,
     },
     { item: "music CD",
         cost: 14.99,
         salesTax: .10,
+        importTax: 0,
     },
     { item: "chocolate bar",
         cost: .85,
         salesTax: 0,
+        importTax: 0,
     }
 ]
 
@@ -47,10 +50,12 @@ var shoppingBasketThree = [
     { item: "bottle of perfume",
         cost: 18.99,
         salesTax: .10,
+        importTax: 0,
     },
     { item: "packet of headache pills",
         cost: 9.75,
         salesTax: 0,
+        importTax: 0,
     },
     { item: "imported box of chocolates",
         cost: 11.25,
@@ -65,8 +70,21 @@ var shoppingBasketThree = [
 function receiptOutput (shoppingBasket) {
     for (var x = 0 ; x < shoppingBasket.length ; x++) {
         var shoppingItem = shoppingBasket[x];
-        console.log("1 " + shoppingItem.item + " at $" + shoppingItem.cost);
+        shoppingItem.taxTotal = shoppingItem.cost * (shoppingItem.salesTax + shoppingItem.importTax);
+        shoppingItem.withTax = shoppingItem.cost + shoppingItem.taxTotal;
+        console.log("1 " + shoppingItem.item + ": $" + shoppingItem.withTax.toFixed(2));
     }
+
+    var taxes = 0;
+    var totalCost = 0;
+    for (var x = 0 ; x < shoppingBasket.length ; x++) {
+        var shoppingItem = shoppingBasket[x];
+        taxes += shoppingItem.taxTotal;
+        totalCost += shoppingItem.withTax;
+    }
+    console.log("Sales Tax: $" + taxes.toFixed(2));
+    console.log("Total Cost: $" + totalCost.toFixed(2));
+
 
 }
 
