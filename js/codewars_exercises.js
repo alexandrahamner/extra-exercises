@@ -29,3 +29,28 @@ console.log("Get the Mean of an Array");
 console.log(getAverage([2,2,2,2]));
 console.log(getAverage([1,3,5,7,9,11,13,15,17,19]));
 console.log(getAverage([1,1,1,1,1,1,1,2]));
+
+
+/* Smallest Unused ID */
+
+function nextId(ids){
+
+    var idsSorted = ids.sort(function(a, b) {
+        return a - b;
+    })
+
+    var idsNoDups = [...new Set(idsSorted)]
+
+    for (var i = 0 ; i <= ids.length + 1 ; i++) {
+        if (i !== idsNoDups[i]) {
+            return i;
+        } else if (i == ids.length) {
+            return ids.length;
+        }
+    }
+}
+
+console.log("Smallest Unused ID");
+console.log(nextId([0,1,2,3,5]));
+console.log(nextId([0,1,2,3,4,5,6,7,8,9,10]));
+console.log(nextId([0,2,5,7,8,10]));
