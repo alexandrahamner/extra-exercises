@@ -82,7 +82,8 @@ function receiptOutput (shoppingBasket) {
         taxes += shoppingItem.taxTotal;
         totalCost += shoppingItem.withTax;
     }
-    console.log("Sales Tax: $" + taxes.toFixed(2));
+
+    console.log("Sales Tax: $" + (Math.round(taxes * 20) / 20).toFixed(2));
     console.log("Total Cost: $" + totalCost.toFixed(2));
 
 
