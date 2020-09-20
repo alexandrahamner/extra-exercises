@@ -54,3 +54,17 @@ console.log("Smallest Unused ID");
 console.log(nextId([0,1,2,3,5]));
 console.log(nextId([0,1,2,3,4,5,6,7,8,9,10]));
 console.log(nextId([0,2,5,7,8,10]));
+
+
+//The Highest Profit Wins!
+
+function minMax(arr) {
+
+    let sortedArr = arr.sort((a, b) => a - b);
+
+    let minMaxArr = [];
+    minMaxArr.push(sortedArr[0]);
+    minMaxArr.push(sortedArr[sortedArr.length - 1]);
+
+    return minMaxArr;
+}
