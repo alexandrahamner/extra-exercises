@@ -68,3 +68,33 @@ function minMax(arr) {
 
     return minMaxArr;
 }
+
+
+//Disemvowel Trolls
+
+function disemvowel(str) {
+
+    var vowels = {
+
+        "a": true,
+        "e": true,
+        "i": true,
+        "o": true,
+        "u": true,
+        "A": true,
+        "E": true,
+        "I": true,
+        "O": true,
+        "U": true,
+
+    };
+
+    var newStr = ""
+    for (let i = 0; i < str.length; i++) {
+        let letter = str[i]
+        if (!vowels[letter]) {
+            newStr += str[i];
+        }
+    }
+    return newStr;
+}
