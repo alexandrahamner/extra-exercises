@@ -112,3 +112,21 @@ function reverseWords(str) {
     }
     return newStr.join(" ");
 }
+
+    //using the .map() function
+
+function reverseWords(str) {
+    return str.split(' ').map(function(word){
+        return word.split('').reverse().join('');
+    }).join(' ');
+}
+
+//count characters in your string
+
+function count (string) {
+    var count = {};
+    string.split('').forEach(function(s) {
+        count[s] ? count[s]++ : count[s] = 1;
+    });
+    return count;
+}
