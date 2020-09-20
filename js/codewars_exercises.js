@@ -98,3 +98,17 @@ function disemvowel(str) {
     }
     return newStr;
 }
+
+// Reverse words
+
+function reverseWords(str) {
+    let strArr = str.split(" ");
+    let newStr = [];
+    for(let x = 0; x < strArr.length; x++){
+        let smallStrArr = strArr[x].split("");
+        smallStrArr = smallStrArr.reverse();
+        let smallStr = smallStrArr.join("");
+        newStr.push(smallStr);
+    }
+    return newStr.join(" ");
+}
