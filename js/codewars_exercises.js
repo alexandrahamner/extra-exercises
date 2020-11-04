@@ -162,3 +162,11 @@ function evenOrOdd(str) {
     if (even === odd) return "Even and Odd are the same";
     return even > odd  ? "Even is greater than Odd" : "Odd is greater than Even"
 }
+
+/*
+Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+ */
+
+function invert(array) {
+    return array.map( x => x === 0 ? x : -x);
+}
