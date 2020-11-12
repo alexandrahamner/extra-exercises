@@ -187,3 +187,29 @@ function oddOrEven(array) {
 
     return (sum % 2 === 0) ? "even" : "odd";
 }
+
+/*
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+ */
+
+var twoSum = function(nums, target) {
+    let numberIndex = new Map();
+    let resultArr = [];
+
+    for(let i = 0; i < nums.length; i++){
+        let num = nums[i];
+        let complement = target - num;
+
+        if(numberIndex.has(complement)) {
+            resultArr[0] = numberIndex.get(complement);
+            resultArr[1] = i;
+            return resultArr;
+        }
+
+        numberIndex.set(num, i);
+    }
+};
